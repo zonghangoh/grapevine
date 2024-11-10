@@ -137,6 +137,36 @@ List audio files with pagination and filtering.
   }
 }
 ```
+
+### **POST** `/audio_files/presigned-url`
+Get a pre-signed URL for uploading an audio file.
+
+**Request Body:**
+```json
+{
+  "fileName": "string", 
+  "fileType": "string"
+}
+```
+
+**Response:**
+```json
+{
+  "presignedUrl": "string", 
+  "key": "string"
+}
+```
+
+### **GET** `/audio_files/:id/presigned-url`
+Get a pre-signed URL for downloading/playing an audio file.
+
+**Response:**
+```json
+{
+  "presignedUrl": "string"
+}
+```
+
 ### **POST** `/audio_files`
 Create a new audio file entry.
 
