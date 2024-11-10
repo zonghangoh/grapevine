@@ -106,7 +106,7 @@ const AudioUploader = ({ refreshFiles }: { refreshFiles: () => Promise<void> }) 
             type="text"
             id="title"
             value={title}
-            maxLength={20}
+            maxLength={100}
             onChange={(e) => setTitle(e.target.value)}
             className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Enter title"
