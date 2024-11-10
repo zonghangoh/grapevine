@@ -200,8 +200,10 @@ Delete an audio file.
 List users with pagination.
 
 **Query Parameters:**
-- `page`: number (default: 1)
-- `limit`: number (default: 9)
+| Parameter | Type   | Default | Description                    |
+|-----------|--------|---------|--------------------------------|
+| page      | number | 1       | Page number for pagination     |
+| limit     | number | 9       | Number of items per page       |
 
 **Response:**
 ```json
