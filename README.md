@@ -232,6 +232,4 @@ uploads/
   ├── {userId}/
   │   ├── {timestamp}-{filename}
   │   └── ...
-```# grapevine
-# grapevine
-# grapevine
+```
