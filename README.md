@@ -86,7 +86,7 @@ Login with username and password.
 }
 ```
 
-**Response Body:**
+**Response:**
 ```json
 {
   "userId": "number",
@@ -222,7 +222,7 @@ List users with pagination.
 ### **POST** `/users`
 Create a new user.
 
-**Request:**
+**Request Body:**
 
 ```json
 {
@@ -234,7 +234,7 @@ Create a new user.
 ### **PUT** `/users/:id`
 Update user details.
 
-**Request:**
+**Request Body:**
 
 ```json
 {
