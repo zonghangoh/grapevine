@@ -78,7 +78,7 @@ All authenticated endpoints require a valid JWT token in the `auth-token` cookie
 ### **POST** `/auth/login`
 Login with username and password.
 
-**Request:**
+**Request Body:**
 ```json
 {
   "username": "string",
@@ -86,7 +86,7 @@ Login with username and password.
 }
 ```
 
-**Response:**
+**Response Body:**
 ```json
 {
   "userId": "number",
