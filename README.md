@@ -170,6 +170,7 @@ Get a pre-signed URL for downloading/playing an audio file.
 ### **POST** `/audio_files`
 Create a new audio file entry.
 
+**Request Body:**
 ```json
 {
   "title": "string",
@@ -182,6 +183,7 @@ Create a new audio file entry.
 ### **PUT** `/audio_files/:id`
 Update audio file metadata.
 
+**Request Body:**
 ```json
 {
   "title": "string",
