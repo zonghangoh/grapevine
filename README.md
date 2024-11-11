@@ -102,6 +102,18 @@ Login with username and password.
 ### **POST** `/auth/logout`
 Logout the current user.
 
+### **GET** `/auth/verify`
+Verifies if the user and auth token is still valid.
+
+**Response:**
+```json
+{
+  "userId": "number",
+  "admin": "boolean",
+  "username": "string"
+}
+```
+
 ## Audio Files Endpoints
 
 ### **GET** `/audio_files`
