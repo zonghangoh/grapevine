@@ -73,7 +73,7 @@ Grapevine is a full-stack web application for managing audio files with user aut
 If an error occured, an `error` key will be present in the response body.
 
 ## Authentication via cookies
-All authenticated endpoints require a valid JWT token in the `auth-token` cookie. This cookie is automatically set after successful login and removed on logout.
+All authenticated endpoints require a valid JWT token in the `auth-token` cookie. This cookie is automatically set after successful login and removed on logout. If admin updates user's password via the `PUT /users/:id` endpoint, existing JWT tokens for the user will become invalid and he/she will have to re-login to retrieve a new JWT token.
 
 ## Authentication Endpoints
 ### **POST** `/auth/login`
