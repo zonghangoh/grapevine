@@ -43,27 +43,28 @@ Grapevine is a full-stack web application for managing audio files with user aut
 ## Database Schema
 ### Users Table
 
-| Column    | Type      | Constraints                |
-|-----------|-----------|---------------------------|
-| id        | SERIAL    | PRIMARY KEY              |
-| username  | VARCHAR   | NOT NULL, UNIQUE         |
-| password  | VARCHAR   | NOT NULL                 |
-| admin     | BOOLEAN   | DEFAULT false            |
-| createdAt | TIMESTAMP | NOT NULL                 |
-| updatedAt | TIMESTAMP | NOT NULL                 |
+| Column           | Type      | Constraints         |
+|------------------|-----------|---------------------|
+| id               | INTEGER   | PRIMARY KEY         |
+| username         | VARCHAR   | NOT NULL, UNIQUE    |
+| password         | VARCHAR   | NOT NULL            |
+| passwordVersion  | INTEGER   | DEFAULT 0           |
+| admin            | BOOLEAN   | DEFAULT false       |
+| createdAt        | TIMESTAMP | NOT NULL            |
+| updatedAt        | TIMESTAMP | NOT NULL            |
 
 ### AudioFiles Table
 
-| Column      | Type      | Constraints                |
-|-------------|-----------|---------------------------|
-| id          | SERIAL    | PRIMARY KEY              |
-| title       | VARCHAR   | NOT NULL                 |
-| description | TEXT      | NOT NULL                 |
-| userId      | INTEGER   | REFERENCES Users(id)     |
-| fileUrl     | VARCHAR   | NOT NULL                 |
-| metadata    | JSONB     |                         |
-| createdAt   | TIMESTAMP | NOT NULL                 |
-| updatedAt   | TIMESTAMP | NOT NULL                 |
+| Column           | Type      | Constraints         |
+|------------------|-----------|---------------------|
+| id               | INTEGER   | PRIMARY KEY         |
+| title            | VARCHAR   | NOT NULL            |
+| description      | TEXT      | NOT NULL            |
+| userId           | INTEGER   | REFERENCES Users(id)|
+| fileUrl          | VARCHAR   | NOT NULL            |
+| metadata         | JSONB     |                     |
+| createdAt        | TIMESTAMP | NOT NULL            |
+| updatedAt        | TIMESTAMP | NOT NULL            |
 
 
 # API Documentation
