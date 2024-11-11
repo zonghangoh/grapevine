@@ -233,11 +233,11 @@ List users with pagination.
         }
     ],
     "pagination": {
-    "currentPage": "number",
-    "totalPages": "number",
-    "totalItems": "number",
-    "itemsPerPage": "number"
-  }
+      "currentPage": "number",
+      "totalPages": "number",
+      "totalItems": "number",
+      "itemsPerPage": "number"
+    }
 }
 ```
 
