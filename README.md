@@ -103,7 +103,7 @@ Login with username and password.
 Logout the current user.
 
 ### **GET** `/auth/verify`
-Verifies if the user and auth token (in cookies) is still valid.
+Verifies if the user and `auth-token` (in cookies) is still valid. A `401` error will be returned if verification fails.
 
 **Response:**
 ```json
