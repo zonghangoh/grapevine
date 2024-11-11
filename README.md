@@ -224,13 +224,13 @@ List users with pagination.
 ```json
 {
     "users": [
-        {
-            "id": "number",
-            "username": "string",
-            "admin": "boolean",
-            "createdAt": "string",
-            "updatedAt": "string"
-        }
+      {
+        "id": "number",
+        "username": "string",
+        "admin": "boolean",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
     ],
     "pagination": {
       "currentPage": "number",
