@@ -44,7 +44,7 @@ export const login = async (ctx: Context) => {
     return;
   }
 
-  const token = signJWT(user.id, user.admin);
+  const token = signJWT(user.id, user.admin, user.passwordVersion);
   setAuthCookie(ctx, token);
 
   ctx.body = {

@@ -31,6 +31,12 @@ export const authenticate = async (ctx: Context, next: Next) => {
       return;
     }
 
+    if (decoded?.passwordVersion !== user.passwordVersion) {
+      ctx.status = 401;
+      ctx.body = { error: 'Your password has been changed' };
+      return;
+    }
+
     ctx.state.user = user;
 
     await next();

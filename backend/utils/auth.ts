@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 interface JWTPayload {
   userId: number;
   isAdmin: boolean;
+  passwordVersion: number;
   iat?: number;
   exp?: number;
 }
@@ -12,8 +13,8 @@ const JWT_SECRET = process.env.JWT_SECRET as string;
 const COOKIE_MAX_AGE = 604800000; // 1 week in milliseconds
 const COOKIE_NAME = 'auth-token';
 
-export const signJWT = (userId: number, isAdmin: boolean) => {
-  return jwt.sign({ userId, isAdmin }, JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN as string });
+export const signJWT = (userId: number, isAdmin: boolean, passwordVersion: number) => {
+  return jwt.sign({ userId, passwordVersion, isAdmin }, JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN as string });
 }
 
 export const verifyJWT = (token: string): JWTPayload | null => {

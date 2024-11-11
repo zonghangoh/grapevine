@@ -4,14 +4,12 @@ FROM node:20-slim
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package files
-COPY package*.json ./
+# Copy source code (excluding node_modules)
+COPY . .
+RUN rm -rf node_modules/
 
 # Install dependencies
 RUN npm install
-
-# Copy source code
-COPY . .
 
 # Build TypeScript code
 RUN npm run build

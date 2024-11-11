@@ -236,7 +236,7 @@ Create a new user.
 ```
 
 ### **PUT** `/users/:id`
-Update user details.
+Update user details. User with existing session will get logged out when password is changed.
 
 **Request Body:**
 
@@ -252,6 +252,7 @@ Delete a user and associated files.
 
 ## Security Features
 - JWT Authentication stored in HTTP-only cookies
+- Log user out if admin changed user's password during a session
 - Password hashing using bcrypt 
 - Admin-only routes protection
 - User-specific file access control: users can only access their own files

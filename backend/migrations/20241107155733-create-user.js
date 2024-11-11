@@ -15,6 +15,11 @@ const migration = {
         allowNull: false,
         type: DataTypes.STRING,
       },
+      passwordVersion: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+      },
       admin: {
         allowNull: false,
         type: DataTypes.BOOLEAN,

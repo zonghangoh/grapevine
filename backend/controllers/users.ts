@@ -96,15 +96,19 @@ export const update = async (ctx: Context) => {
 
     const { username, password } = ctx.request.body as { username?: string; password?: string };
     const hashedPassword = password ? await bcrypt.hash(password, 10) : undefined;
-    
+    const passwordVersion = user.passwordVersion + 1;
+
     const updatedFields = {
       ...(username && { username }),
-      ...(hashedPassword && { password: hashedPassword })
+      ...(hashedPassword && { 
+        password: hashedPassword ,
+        passwordVersion: passwordVersion
+      })
     };
 
     await user.update(updatedFields);
 
-    const { password: _, ...userWithoutPassword } = user.toJSON();
+    const { password: _, passwordVersion: __, ...userWithoutPassword } = user.toJSON();
     ctx.body = userWithoutPassword;
   } catch (error: unknown) {
     ctx.status = 500;

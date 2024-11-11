@@ -4,17 +4,19 @@ interface UserAttributes {
   id: number;
   username: string;
   password: string;
-  admin: boolean
+  passwordVersion: number;
+  admin: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
 
-interface UserCreationAttributes extends Optional<UserAttributes, 'id' | 'createdAt' | 'updatedAt'> {}
+interface UserCreationAttributes extends Optional<UserAttributes, 'id' | 'createdAt' | 'updatedAt' | 'passwordVersion'> {}
 
 class User extends Model<UserAttributes, UserCreationAttributes> {
   declare id: number;
   declare username: string;
   declare password: string;
+  declare passwordVersion: number;
   declare admin: boolean;
   declare createdAt: Date;
   declare updatedAt: Date;
@@ -36,6 +38,7 @@ export function initUser(sequelize: Sequelize): typeof User {
     admin: DataTypes.BOOLEAN,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
+    passwordVersion: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {
