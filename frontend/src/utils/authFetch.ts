@@ -25,9 +25,10 @@ export const authFetch = async (
     } else {
       window.location.href = '/';
     }
+    const { error } = await response.json();
+    window.alert(error);
 
-    window.alert("Unauthorized");
-    throw new Error('Unauthorized');
+    throw new Error(error);
   }
 
   if (!response.ok) {
