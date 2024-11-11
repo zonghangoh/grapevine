@@ -13,8 +13,10 @@ interface User {
 
 interface PaginatedResponse {
   users: User[];
-  total: number;
-  totalPages: number;
+  pagination: {
+    totalItems: number;
+    totalPages: number;
+  }
 }
 
 const AccountsPage = () => {
@@ -36,7 +38,7 @@ const AccountsPage = () => {
   const fetchUsers = async () => {
     const response: PaginatedResponse = await authFetch(`/users?page=${currentPage}`);
     setUsers(response.users);
-    setTotalPages(response.totalPages);
+    setTotalPages(response.pagination.totalPages);
   };
 
   const handlePageChange = (page: number) => {

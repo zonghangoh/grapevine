@@ -232,8 +232,12 @@ List users with pagination.
             "updatedAt": "string"
         }
     ],
-    "total": "number",
-    "totalPages": "number"
+    "pagination": {
+    "currentPage": "number",
+    "totalPages": "number",
+    "totalItems": "number",
+    "itemsPerPage": "number"
+  }
 }
 ```
 

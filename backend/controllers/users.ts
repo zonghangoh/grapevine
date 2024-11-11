@@ -43,8 +43,12 @@ export const index = async (ctx: Context) => {
 
     ctx.body = {
       users,
-      total: count,
-      totalPages
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: count,
+        itemsPerPage: limit
+      }
     };
   } catch (error: unknown) {
     ctx.status = 500;
