@@ -33,6 +33,11 @@ const AudioUploader = ({ refreshFiles }: { refreshFiles: () => Promise<void> }) 
     e.preventDefault();
     if (!uploadedFile) return;
 
+    if (!title) {
+      window.alert("Title can't be empty")
+      return;
+    }
+
     setUploading(true);
     try {
       // Get presigned URL
