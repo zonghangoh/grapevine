@@ -2,6 +2,10 @@
 # Hear through the Grapevine
 Grapevine is a full-stack web application for managing audio files with user authentication. The system consists of a Node.js backend service and a React frontend application.
 
+https://github.com/user-attachments/assets/40014778-c1d0-4bd8-8135-66e2427ff458
+
+
+
 ## Running Instructions
 1. Copy and paste the provided ENV variables provided into the root directory's `.env` file
 2. Build and start the containers:
